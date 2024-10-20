@@ -13,7 +13,7 @@
     <h1>Stock Items</h1>
 
     <!-- Buttons for different dealers with input fields -->
-      <!--  2895 (0), 2893 (31), 2880 (42), 2833 (40), 2798 (15), 2794 (564), 2343 (858)  -->
+    <!--  2895 (0), 2893 (31), 2880 (42), 2833 (40), 2798 (15), 2794 (564), 2343 (858)  -->
     <div class="stockLoaderItemsWrapper">
       <div class="stockLoaderItemWrapper">
         <label>Dealer Id</label>
@@ -32,15 +32,18 @@
 
     <!-- Template for stock items -->
     <template class="stock-item-template">
+      <li class="stock-item">
+        <span class="stock-item-make"></span> -
+        <span class="stock-item-model"></span> -
+        <span class="stock-item-price"></span>
+      </li>
+    </template>
+
+    <!-- Template for displaying stock items count -->
+    <template class="stock-count-template">
       <div class="template-content-wrapper">
         <h3 class="number-of-stock"></h3>
-        <ul class="stock-items-list">
-          <li class="item">
-            <span class="stock-item-make"></span> -
-            <span class="stock-item-model"></span> -
-            <span class="stock-item-price"></span>
-          </li>
-        </ul>
+        <ul class="stock-items-list"></ul>
       </div>
     </template>
 
