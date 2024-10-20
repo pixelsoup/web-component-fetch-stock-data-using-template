@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stock Fetch Web Component</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./images/favicon.svg" />
+  <link rel="stylesheet" href="css/production.css">
+</head>
+<body>
+    <div class="containerPadded">
+        <h1>Stock Items</h1>
+
+        <!-- Buttons for different dealers with input fields -->
+        <div class="stockLoaderItemsWrapper">
+          <div class="stockLoaderItemWrapper">
+            <label>Dealer Id</label>
+            <input type="number" class="dealer-id-input" placeholder="e.g. 2343" min="1" />
+            <button class="load-stock">Load Stock Items</button>
+            <div class="stockLoaderListWrapper"></div>
+          </div>
+
+          <div class="stockLoaderItemWrapper">
+            <label>Dealer Id</label>
+            <input type="number" class="dealer-id-input" placeholder="e.g. 3879" min="1" />
+            <button class="load-stock">Load Stock Items</button>
+            <div class="stockLoaderListWrapper"></div>
+          </div>
+        </div>
+
+        <!-- Template for stock items -->
+        <template class="stock-item-template">
+            <li class="item">
+                <span class="stock-item-make"></span> -
+                <span class="stock-item-model"></span> -
+                <span class="stock-item-price"></span>
+            </li>
+        </template>
+
+    </div>
+    <script type="module" src="./js/development.js"></script>
+</body>
+</html>
