@@ -17,6 +17,12 @@ document.querySelectorAll('button.load-stock').forEach(button => {
       // Clear existing items
       stockItemsList.innerHTML = '';
 
+      // Check if data is empty
+      if (!data || data.length === 0) {
+        window.alert('No data available for this Dealer ID.');
+        return; // Exit if no data is available
+      }
+
       // Loop through the fetched data and create list items
       data.forEach(item => {
         const clone = document.importNode(template.content, true); // Clone the template content
@@ -30,7 +36,8 @@ document.querySelectorAll('button.load-stock').forEach(button => {
         stockItemsList.appendChild(clone);
       });
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching data: There is no data file for this dealer.', error);
+      window.alert('There is no data available for this Dealer ID.'); // Alert on fetch error
     }
   });
 });
