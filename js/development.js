@@ -19,21 +19,30 @@ document.querySelectorAll('button.load-stock').forEach(button => {
 
       // Check if data is empty
       if (!data || data.length === 0) {
-        window.alert('No data available for this Dealer ID.');
+        window.alert('There is stock data but it\'s empty.');
         return; // Exit if no data is available
       }
 
+      // Clone the template for displaying stock items
+      const clone = document.importNode(template.content, true); // Clone the template content
+
+      // Clone and populate number of stock items heading
+      clone.querySelector('.number-of-stock').textContent = `(${data.length}) Stock Items`;
+
+      // Append number of stock items heading to the list wrapper
+      stockItemsList.appendChild(clone.querySelector('h3')); // Append h3 to stockItemsList
+
       // Loop through the fetched data and create list items
       data.forEach(item => {
-        const clone = document.importNode(template.content, true); // Clone the template content
+        const itemClone = document.importNode(template.content, true); // Clone again for each item
 
         // Populate the cloned template with data
-        clone.querySelector('.stock-item-make').textContent = item.make || 'Unknown Make';
-        clone.querySelector('.stock-item-model').textContent = item.model || 'Unknown Model';
-        clone.querySelector('.stock-item-price').textContent = `$${(item.price || 0).toFixed(2)}`; // Fallback for price
+        itemClone.querySelector('.stock-item-make').textContent = item.make || 'Unknown Make';
+        itemClone.querySelector('.stock-item-model').textContent = item.model || 'Unknown Model';
+        itemClone.querySelector('.stock-item-price').textContent = `$${(item.price || 0).toFixed(2)}`; // Fallback for price
 
         // Append the cloned item to the list
-        stockItemsList.appendChild(clone);
+        stockItemsList.appendChild(itemClone.querySelector('.item'));
       });
     } catch (error) {
       console.error('Error fetching data: There is no data file for this dealer.', error);
