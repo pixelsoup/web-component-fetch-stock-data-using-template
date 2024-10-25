@@ -2,7 +2,10 @@ class StockLoader extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = /* html */ `
+    this.shadowRoot.innerHTML = `
+      <style>
+        /* Add your styles here */
+      </style>
       <div class="stockLoaderItemWrapper">
         <label>Dealer Id</label>
         <input type="number" class="dealer-id-input" placeholder="e.g. 2343" min="1" />
@@ -20,8 +23,10 @@ class StockLoader extends HTMLElement {
     const dealerIdInput = this.shadowRoot.querySelector('.dealer-id-input');
     const dealerId = dealerIdInput.value;
     const stockItemsListWrapper = this.shadowRoot.querySelector('.stockLoaderListWrapper');
-    const itemTemplate = this.shadowRoot.querySelector('.stock-item-template');
-    const countTemplate = this.shadowRoot.querySelector('.stock-content-template');
+
+    // Access templates from the main document
+    const itemTemplate = document.getElementById('stock-item-template');
+    const countTemplate = document.getElementById('stock-content-template');
 
     if (!dealerId) {
       alert('Please enter a valid Dealer ID.');

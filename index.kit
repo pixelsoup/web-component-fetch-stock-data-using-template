@@ -12,22 +12,21 @@
   <div class="containerPadded">
     <h1>Stock Items</h1>
 
-    <!-- Buttons for different dealers with input fields -->
-    <!--  2895 (0), 2893 (31), 2880 (42), 2833 (40), 2798 (15), 2794 (564), 2343 (858)  -->
+    <!-- Use multiple stock-loader components -->
     <div class="stockLoaderItemsWrapper">
+      <stock-loader></stock-loader>
       <stock-loader></stock-loader>
     </div>
 
-    <!-- Template for displaying stock Heading and List -->
-    <template class="stock-content-template">
+    <!-- Templates for stock content and items -->
+    <template id="stock-content-template">
       <div class="template-content-wrapper">
         <h3 class="number-of-stock"></h3>
         <ul class="stock-items-list"></ul>
       </div>
     </template>
 
-    <!-- Template for stock items -->
-    <template class="stock-item-template">
+    <template id="stock-item-template">
       <li class="stock-item">
         <span class="stock-item-make"></span> -
         <span class="stock-item-model"></span> -
