@@ -11,6 +11,11 @@
 <body>
   <div class="containerPadded">
     <h1>Stock Items</h1>
+    <pre class="preHightlighted">
+      ?dealer-id=2893&primary-col=cornflowerblue
+      DealerIds: 2895 (0), 2893 (31), 2880 (42), 2833 (40), 2798 (15), 2794 (564), 2343 (858)
+      Colours: navy, darkblue, cornflowerblue, crimson, brown, goldenrod, darkseagreen
+    </pre>
 
     <!-- Use multiple stock-loader components -->
     <div class="stockLoaderItemsWrapper">
@@ -18,23 +23,7 @@
       <stock-loader></stock-loader>
     </div>
 
-    <!-- Templates for stock content and items -->
-    <template id="stock-content-template">
-      <div class="template-content-wrapper">
-        <h3 class="number-of-stock"></h3>
-        <ul class="stock-items-list"></ul>
-      </div>
-    </template>
-
-    <template id="stock-item-template">
-      <li class="stock-item">
-        <span class="stock-item-make"></span> -
-        <span class="stock-item-model"></span> -
-        <span class="stock-item-price"></span>
-      </li>
-    </template>
-
   </div>
-  <script type="module" src="./js/development.js"></script>
+  <script type="module" src="./js/development2.js"></script>
 </body>
 </html>
